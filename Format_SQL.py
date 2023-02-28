@@ -28,6 +28,8 @@ CREATE TABLE Basic_Information (
   );
  """)
 
+# Read LAS files and Insert The Values
+
 with os.scandir(your_files_loaction) as f:
     a = 0
     for file in f:
