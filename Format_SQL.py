@@ -3,7 +3,7 @@ import lasio as ls
 import numpy as np
 import mysql.connector
 
-host,user,passwd,database ="localhost","root","Y1012Jqkhkp","balajar54_sql"
+host,user,passwd,database =localhost,user,your_pasword,name_database
 
 # Create Database
 connection = mysql.connector.connect(host=host,user=user,passwd=passwd)
@@ -28,12 +28,12 @@ CREATE TABLE Basic_Information (
   );
  """)
 
-with os.scandir("C:\\Users\\ASUS\\Downloads\\rmotc\\DataSets\\Well Log\\CD Files\\LAS_log_files\\Shallow_LAS_files") as f:
+with os.scandir(your_files_loaction) as f:
     a = 0
     for file in f:
         nama = file.name
         print(nama)
-        data = ls.read("C:\\Users\\ASUS\\Downloads\\rmotc\\DataSets\\Well Log\\CD Files\\LAS_log_files\\Shallow_LAS_files"+'\\'+nama)
+        data = ls.read(your_files_location+'\\'+nama)
         well_information = data.sections['Well']
         cursor.execute("""
         INSERT INTO Basic_Information (NAME, CODE, COORDINATE, COMPANY, FIELD, STATE, START_DEPTH, STOP_DEPTH, STEP_DEPTH)
